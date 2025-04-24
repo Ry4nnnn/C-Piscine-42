@@ -1,39 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ultimate_range.c                                :+:      :+:    :+:   */
+/*   ft_sort_int_tab.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ryan <ryan@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: wlim <wlim@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/21 13:31:38 by ryan              #+#    #+#             */
-/*   Updated: 2025/04/24 18:34:49 by wlim             ###   ########.fr       */
+/*   Created: 2025/04/10 15:41:25 by wlim              #+#    #+#             */
+/*   Updated: 2025/04/10 15:41:37 by wlim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <stdio.h>
 
-int	ft_ultimate_range(int **range, int min, int max)
+void	ft_swap(int *a, int *b)
+{
+	int	temp;
+
+	temp = *a;
+	*a = *b;
+	*b = temp;
+}
+
+void	ft_sort_int_tab(int *tab, int size)
 {
 	int	i;
+	int	j;
 
 	i = 0;
-	*range = (int *)malloc(sizeof(int) * (max - min));
-	if (max <= min)
+	while (i < size - 1)
 	{
-		*range = NULL;
-		return (0);
-	}
-	if (!*range)
-	{
-		*range = NULL;
-		return (-1);
-	}
-	while (min < max)
-	{
-		*range[i] = min;
-		min++;
+		j = i + 1;
+		while (j < size)
+		{
+			if (tab[i] > tab[j])
+				ft_swap(&tab[i], &tab[j]);
+			j++;
+		}
 		i++;
 	}
-	return (i);
 }
