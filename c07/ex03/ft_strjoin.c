@@ -1,6 +1,12 @@
 #include <unistd.h>
 #include <stdlib.h>
 
+
+/**
+ * @brief this function with iterate though the given array
+ * and count the number of characters
+ * @return length of the given array
+ */
 int	ft_strlen(char *str)
 {
 	int i;
@@ -11,8 +17,12 @@ int	ft_strlen(char *str)
 	return (i);
 }
 
-//this func gets the length of the string in every array
-// + the length of the (seperators * size - 1)
+/**
+ * @brief this function will iterate through the 2d array (strs)
+ * and get the length of it + the length of separators multiply
+ * by size - 1
+ * @return length of 2d array + (length of sep * (size - 1))
+ */
 int	get_total_len(int size, char **strs, char *sep)
 {
 	int total_len;
@@ -30,6 +40,14 @@ int	get_total_len(int size, char **strs, char *sep)
 	return (total_len);
 }
 
+/**
+ * @brief this functions joins multiple string in strs into a single string
+ * adding sep (separator) between each string
+ * @param size represents how many strings to join from strs
+ * @param strs is an array of arrays (2d) waiting for be contatenate
+ * @param sep is the separator needed to be inserted between strings in strs
+ * @return an allocated string that is separated by sep
+ */
 char	*ft_strjoin(int size, char **strs, char *sep)
 {
 	char *res;

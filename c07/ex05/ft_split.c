@@ -3,15 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ryan <ryan@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: wlim <wlim@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 13:25:22 by ryan              #+#    #+#             */
-/*   Updated: 2025/04/22 13:42:01 by ryan             ###   ########.fr       */
+/*   Updated: 2025/04/24 23:46:29 by wlim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
+/**
+ * @brief Checks if a character exists in the charset.
+ * 
+ * @param c Character to check.
+ * @param charset String containing separator characters.
+ * @return int 1 if character is found in charset, otherwise 0.
+ */
 int	is_set(char c, char *charset)
 {
 	while (*charset != '\0')
@@ -23,7 +30,14 @@ int	is_set(char c, char *charset)
 	return (0);
 }
 
-//this function get the size of the upper array that needs to allocate
+/**
+ * @brief Calculates the number of substrings that will be created from the input string,
+ *        based on the given separators.
+ * 
+ * @param str The input string to be split.
+ * @param charset String containing separator characters.
+ * @return int Number of substrings that will be allocated in the split.
+ */
 int	get_len(char *str, char *charset)
 {
 	int	i;
@@ -46,6 +60,13 @@ int	get_len(char *str, char *charset)
 	return (len);
 }
 
+/**
+ * @brief Calculates the length of the current word (substring) until a separator is found.
+ * 
+ * @param str Current position in the input string.
+ * @param charset String containing separator characters.
+ * @return int Length of the word until the next separator.
+ */
 int	get_inner_len(char *str, char *charset)
 {
 	int len;
@@ -77,6 +98,14 @@ unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 	return (len);
 }
 
+/**
+ * @brief purpose of this function is to split the given single array (str)
+ * into a 2d array separated by the contents in the array charset
+ * 
+ * @param str given string to be seperated
+ * @param charset separators
+ * @return the malloc-ed 2d array
+ */
 char	**ft_split(char *str, char *charset)
 {
 	char	**res;
