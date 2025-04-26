@@ -6,14 +6,13 @@
 /*   By: wlim <wlim@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 00:16:47 by wlim              #+#    #+#             */
-/*   Updated: 2025/04/24 01:17:15 by wlim             ###   ########.fr       */
+/*   Updated: 2025/04/26 18:08:04 by wlim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_ABS_H
 # define FT_ABS_H
 
-# define ABS(Value) (Value > 0) ? Value : -Value
-//For example: Value = -5 so -(-5)
+# define ABS(Value) ((Value) * (((Value) > 0) - ((Value) < 0)))
 
 #endif
