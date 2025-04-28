@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ryan <ryan@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: wlim <wlim@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/27 17:17:04 by ryan              #+#    #+#             */
-/*   Updated: 2025/04/28 14:51:56 by ryan             ###   ########.fr       */
+/*   Updated: 2025/04/28 18:13:01 by wlim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,6 @@ int	get_size(char *str, char *charset)
 			while (str[i] && !is_charset(str[i], charset))
 				i++;
 		}
-		i++;
 	}
 	return (len);
 }
@@ -78,7 +77,6 @@ char	*copy_word(char *str, char *charset)
 char	**ft_split(char *str, char *charset)
 {
 	char	**res;
-	int		strlen;
 	int		i;
 	int		j;
 
