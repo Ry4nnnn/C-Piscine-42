@@ -6,12 +6,19 @@
 /*   By: wlim <wlim@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/27 17:17:04 by ryan              #+#    #+#             */
-/*   Updated: 2025/04/28 18:13:01 by wlim             ###   ########.fr       */
+/*   Updated: 2025/04/28 19:42:18 by wlim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
+/**
+ * @brief Checks if a character exists within a set of separator characters.
+ * 
+ * @param c Character to check.
+ * @param charset String containing separator characters.
+ * @return int 1 if character is found in charset, otherwise 0.
+ */
 int	is_charset(char c, char *charset)
 {
 	while (*charset != '\0')
@@ -23,6 +30,14 @@ int	is_charset(char c, char *charset)
 	return (0);
 }
 
+
+/**
+ * @brief Calculates the number of substrings that will result from splitting the input string.
+ * 
+ * @param str The input string to be split.
+ * @param charset String containing separator characters.
+ * @return int Number of substrings to be allocated.
+ */
 int	get_size(char *str, char *charset)
 {
 	int	i;
@@ -44,6 +59,14 @@ int	get_size(char *str, char *charset)
 	return (len);
 }
 
+
+/**
+ * @brief Calculates the length of a word (substring) from the current position until a separator is found.
+ * 
+ * @param str Current position in the input string.
+ * @param charset String containing separator characters.
+ * @return int Length of the word.
+ */
 int	get_word_size(char *str, char *charset)
 {
 	int	len;
@@ -54,6 +77,13 @@ int	get_word_size(char *str, char *charset)
 	return (len);
 }
 
+/**
+ * @brief Copies a word from the input string up to the next separator into a newly allocated string.
+ * 
+ * @param str Current position in the input string.
+ * @param charset String containing separator characters.
+ * @return char* Pointer to the newly allocated word string.
+ */
 char	*copy_word(char *str, char *charset)
 {
 	int		len;
@@ -74,6 +104,13 @@ char	*copy_word(char *str, char *charset)
 	return (word);
 }
 
+/**
+ * @brief Splits a given string into an array of substrings based on specified separator characters.
+ * 
+ * @param str The string to split.
+ * @param charset String containing separator characters.
+ * @return char** A newly allocated NULL-terminated array of strings (substrings).
+ */
 char	**ft_split(char *str, char *charset)
 {
 	char	**res;
