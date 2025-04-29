@@ -6,7 +6,7 @@
 /*   By: wlim <wlim@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/27 17:17:04 by ryan              #+#    #+#             */
-/*   Updated: 2025/04/28 20:05:51 by wlim             ###   ########.fr       */
+/*   Updated: 2025/04/29 22:07:10 by wlim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,8 @@ int	is_charset(char c, char *charset)
 	return (0);
 }
 
-
 /**
- * @brief Calculates the number of substrings that will result from splitting the input string.
+ * @brief Calculates the number of substrings
  * 
  * @param str The input string to be split.
  * @param charset String containing separator characters.
@@ -59,9 +58,9 @@ int	get_size(char *str, char *charset)
 	return (len);
 }
 
-
 /**
- * @brief Calculates the length of a word (substring) from the current position until a separator is found.
+ * @brief Calculates the length of a word (substring)
+ * from the current position until a separator is found.
  * 
  * @param str Current position in the input string.
  * @param charset String containing separator characters.
@@ -78,7 +77,8 @@ int	get_word_size(char *str, char *charset)
 }
 
 /**
- * @brief Copies a word from the input string up to the next separator into a newly allocated string.
+ * @brief Copies a word from the input string
+ * up to the next separator into a newly allocated string.
  * 
  * @param str Current position in the input string.
  * @param charset String containing separator characters.
@@ -105,7 +105,8 @@ char	*copy_word(char *str, char *charset)
 }
 
 /**
- * @brief Splits a given string into an array of substrings based on specified separator characters.
+ * @brief Splits a given string into an array of substrings
+ * based on specified separator characters.
  * 
  * @param str The string to split.
  * @param charset String containing separator characters.

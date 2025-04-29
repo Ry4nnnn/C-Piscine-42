@@ -1,6 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: wlim <wlim@student.42.fr>                  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/29 22:01:06 by wlim              #+#    #+#             */
+/*   Updated: 2025/04/29 22:05:03 by wlim             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 #include <stdlib.h>
-
 
 /**
  * @brief this function with iterate though the given array
@@ -9,7 +20,7 @@
  */
 int	ft_strlen(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i] != '\0')
@@ -25,8 +36,8 @@ int	ft_strlen(char *str)
  */
 int	get_total_len(int size, char **strs, char *sep)
 {
-	int total_len;
-	int i;
+	int	total_len;
+	int	i;
 
 	total_len = 0;
 	i = 0;
@@ -50,22 +61,19 @@ int	get_total_len(int size, char **strs, char *sep)
  */
 char	*ft_strjoin(int size, char **strs, char *sep)
 {
-	char *res;
-	int i;
-	int j;
-	int nindex;
-	int total_len;
+	char	*res;
+	int		i;
+	int		j;
+	int		nindex;
 
 	i = 0;
 	nindex = 0;
 	if (size == 0)
 	{
 		res = malloc(1);
-		res[0] = '\0';
 		return (res);
 	}
-	total_len = get_total_len(size, strs, sep);
-	res = malloc(sizeof(total_len + 1));
+	res = malloc(sizeof(get_total_len(size, strs, sep) + 1));
 	while (i < size)
 	{
 		j = 0;
