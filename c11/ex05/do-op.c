@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   do-op.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ryan <ryan@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: wlim <wlim@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 02:41:27 by wlim              #+#    #+#             */
-/*   Updated: 2025/04/29 16:51:59 by ryan             ###   ########.fr       */
+/*   Updated: 2025/04/29 18:41:57 by wlim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int	calc(int a, int b, int (*op)(int, int))
 
 int	ft_do_op(int a, char *op, int b)
 {
-	int	(*ops[5])(int, int) = {&add, &minus, &multiply, &div, &mod};
+	static int	(*ops[5])(int, int) = {&add, &minus, &multiply, &div, &mod};
 
 	if (!is_operator(op))
 		return (0);

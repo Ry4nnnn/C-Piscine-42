@@ -6,14 +6,14 @@
 /*   By: wlim <wlim@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 04:32:51 by wlim              #+#    #+#             */
-/*   Updated: 2025/04/29 04:40:08 by wlim             ###   ########.fr       */
+/*   Updated: 2025/04/29 18:37:53 by wlim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_strcmp(char *s1, char *s2)
 {
 	int	i;
-	
+
 	i = 0;
 	while ((s1[i] || s2[i]) && s1[i] == s2[i])
 		i++;
@@ -22,7 +22,7 @@ int	ft_strcmp(char *s1, char *s2)
 
 void	ft_swap(char **a, char **b)
 {
-	char *temp;
+	char	*temp;
 
 	temp = *a;
 	*a = *b;

@@ -6,7 +6,7 @@
 /*   By: wlim <wlim@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 00:39:26 by wlim              #+#    #+#             */
-/*   Updated: 2025/04/29 00:55:47 by wlim             ###   ########.fr       */
+/*   Updated: 2025/04/29 18:33:19 by wlim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,9 @@
 
 /*
 > (*f)(tab[i])
-(explicitly dereferencing the pointer before calling the function)
-
+(dereferencing the pointer before calling the function)
 > (f)(tab[i])
 (this is a more concise form, but still calls the function correctly)
-
 > f(tab[i])
 (the most common and simple way to call a function through a function pointer,
 as C automatically dereferences the function pointer for you)

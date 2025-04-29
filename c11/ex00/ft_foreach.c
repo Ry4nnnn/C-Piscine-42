@@ -6,11 +6,11 @@
 /*   By: wlim <wlim@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 23:19:55 by wlim              #+#    #+#             */
-/*   Updated: 2025/04/28 23:32:47 by wlim             ###   ########.fr       */
+/*   Updated: 2025/04/29 18:39:06 by wlim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_foreach(int *tab, int length, void(*f)(int))
+void	ft_foreach(int *tab, int length, void (*f)(int))
 {
 	int	i;
 
@@ -55,7 +55,7 @@ int main(void)
 {
 	int	tab[5] = {1, 2, 3, 4, 5};
 
-	ft_foreach(tab, 4, &ft_putnbr);
+	ft_foreach(tab, 5, &ft_putnbr);
 	return (0);
 }
 */
