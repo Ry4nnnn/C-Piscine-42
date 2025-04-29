@@ -6,7 +6,7 @@
 /*   By: wlim <wlim@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 19:21:09 by wlim              #+#    #+#             */
-/*   Updated: 2025/04/29 22:26:37 by wlim             ###   ########.fr       */
+/*   Updated: 2025/04/30 02:52:19 by wlim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,10 @@ void	ft_convert_base(char *nbr, char *base, int *result)
 	{
 		index = index_in_base(nbr[i], base);
 		if (index == -1)
-			break ;
+		{
+			*result = 0;
+			return ;
+		}
 		*result = *result * base_num + index;
 		i++;
 	}
@@ -101,12 +104,12 @@ int	ft_atoi_base(char *str, char *base)
 	return (sign * result);
 }
 
-/* 
+
 #include <stdio.h>
 int main()
 {
 	int i;
-	i = ft_atoi_base("--101010", "01");
+	i = ft_atoi_base("1010F", "01");
 	printf ("%d\n", i);
 	return (0);
-} */
+} 
