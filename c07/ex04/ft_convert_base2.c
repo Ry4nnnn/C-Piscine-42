@@ -6,7 +6,7 @@
 /*   By: wlim <wlim@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 01:26:53 by wlim              #+#    #+#             */
-/*   Updated: 2025/04/30 03:30:50 by wlim             ###   ########.fr       */
+/*   Updated: 2025/04/30 03:57:02 by wlim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,13 @@ int	check_valid(char *base)
 		return (0);
 	while (i < len)
 	{
-		j = i;
-		while (++j < len)
+		j = i + 1;
+		while (j < len)
+		{
 			if (base[i] == base[j])
 				return (0);
+			j = j + 1;	
+		}
 		if (base[i] == '+' || base[i] == '-')
 			return (0);
 		i++;
