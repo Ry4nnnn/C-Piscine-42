@@ -6,7 +6,7 @@
 /*   By: wlim <wlim@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 14:32:02 by wlim              #+#    #+#             */
-/*   Updated: 2025/04/17 21:22:30 by wlim             ###   ########.fr       */
+/*   Updated: 2025/04/30 00:18:16 by wlim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ int	check_base(char *base)
 	int	i;
 	int	j;
 
+	i = 0;
 	len = ft_strlen(base);
 	if (len < 2)
 		return (0);
@@ -54,8 +55,8 @@ int	check_base(char *base)
 
 void	ft_putnbr_base(int nbr, char *base)
 {
-	int	base_len;
-	int	num;
+	int		base_len;
+	long	num;
 
 	base_len = ft_strlen(base);
 	num = nbr;
@@ -64,7 +65,7 @@ void	ft_putnbr_base(int nbr, char *base)
 		if (nbr < 0)
 		{
 			ft_putchar('-');
-			num = nbr * -1;
+			num = -num;
 		}
 		if (num >= base_len)
 		{
@@ -75,11 +76,3 @@ void	ft_putnbr_base(int nbr, char *base)
 			ft_putchar(base[num]);
 	}
 }
-
-/*
-int main()
-{
-	ft_putnbr_base(42, "01");
-	return (0);
-}
-*/
