@@ -6,7 +6,7 @@
 /*   By: wlim <wlim@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 01:29:34 by wlim              #+#    #+#             */
-/*   Updated: 2025/04/30 20:59:45 by wlim             ###   ########.fr       */
+/*   Updated: 2025/04/30 21:24:39 by wlim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static int	ft_intlen(int nbr, int base_len)
 	return (len);
 }
 
-static void	fill_result(char *res, int nbr, char *base, int len)
+static void	fill_result(char *res, long nbr, char *base, int len)
 {
 	int	base_len;
 
@@ -51,7 +51,7 @@ static void	fill_result(char *res, int nbr, char *base, int len)
 	}
 }
 
-char	*ft_putnbr_base(int nbr, char *base)
+char	*ft_putnbr_base(long nbr, char *base)
 {
 	int		len;
 	int		base_len;
@@ -72,7 +72,7 @@ char	*ft_putnbr_base(int nbr, char *base)
 
 char	*ft_convert_base(char *nbr, char *base_from, char *base_to)
 {
-	int	num;
+	long	num;
 
 	if (!check_valid(base_from) || !check_valid(base_to))
 		return (NULL);
