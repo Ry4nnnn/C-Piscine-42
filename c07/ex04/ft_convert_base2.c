@@ -6,7 +6,7 @@
 /*   By: wlim <wlim@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 01:26:53 by wlim              #+#    #+#             */
-/*   Updated: 2025/04/30 04:17:52 by wlim             ###   ########.fr       */
+/*   Updated: 2025/04/30 20:39:23 by wlim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,15 +33,12 @@ int	check_valid(char *base)
 		return (0);
 	while (i < len)
 	{
-		j = i + 1;
-		while (j < len)
-		{
-			if (base[i] == base[j])
-				return (0);
-			j = j + 1;
-		}
-		if (base[i] == '+' || base[i] == '-')
+		if (base[i] == '+' || base[i] == '-' || base[i] <= 32 || base[i] >= 127)
 			return (0);
+		j = i + 1;
+		while (base[j] != '\0')
+			if (base[i] == base[j++])
+				return (0);
 		i++;
 	}
 	return (1);
@@ -62,47 +59,23 @@ static int	index_in_base(char c, char *base)
 	return (-1);
 }
 
-static void	ft_convert_dec(char *nbr, char *base, int *result)
-{
-	int	i;
-	int	index;
-	int	base_num;
-
-	i = 0;
-	index = 0;
-	base_num = ft_strlen(base);
-	while (nbr[i])
-	{
-		index = index_in_base(nbr[i], base);
-		if (index == -1)
-		{
-			*result = 0;
-			return ;
-		}
-		*result = *result * base_num + index;
-		i++;
-	}
-}
-
 int	ft_atoi_base(char *str, char *base)
 {
-	int		i;
 	int		sign;
 	int		result;
+	int		base_len;
 
-	i = 0;
 	sign = 1;
 	result = 0;
-	if (!check_valid(base))
-		return (0);
-	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
-		i++;
-	while (str[i] == '-' || str[i] == '+')
+	base_len = ft_strlen(base);
+	while ((*str >= 9 && *str <= 13) || *str == 32)
+		str++;
+	while (*str == '-' || *str == '+')
 	{
-		if (str[i] == '-')
+		if (*str++ == '-')
 			sign *= -1;
-		i++;
 	}
-	ft_convert_dec(str + i, base, &result);
+	while (index_in_base(*str, base) != -1)
+		result = result * base_len + index_in_base(*str++, base);
 	return (sign * result);
 }

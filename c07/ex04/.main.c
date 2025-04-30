@@ -51,5 +51,7 @@ int	main(void)
 	// Test Case 8: Zero Case
 	run_test_case("0", "0123456789", "01");  // Zero in decimal to binary
 
+	// Test Case 8: Zero Case
+	run_test_case("-2147483648", "0123456789", "01");  // Zero in decimal to binary
 	return (0);
 }
