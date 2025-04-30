@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wlim <wlim@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: ryan <ryan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 22:01:06 by wlim              #+#    #+#             */
-/*   Updated: 2025/04/30 21:57:55 by wlim             ###   ########.fr       */
+/*   Updated: 2025/05/01 00:42:22 by ryan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int	get_total_len(int size, char **strs, char *sep)
 		i++;
 	}
 	if (size > 1)
-		total_len += ft_strlen(sep) + (size - 1);
+		total_len += ft_strlen(sep) * (size - 1);
 	return (total_len);
 }
 
