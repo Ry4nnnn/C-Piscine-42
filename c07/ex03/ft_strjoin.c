@@ -6,7 +6,7 @@
 /*   By: wlim <wlim@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 22:01:06 by wlim              #+#    #+#             */
-/*   Updated: 2025/04/29 22:05:03 by wlim             ###   ########.fr       */
+/*   Updated: 2025/04/30 21:57:55 by wlim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 		res = malloc(1);
 		return (res);
 	}
-	res = malloc(sizeof(get_total_len(size, strs, sep) + 1));
+	res = malloc(get_total_len(size, strs, sep) + 1);
 	while (i < size)
 	{
 		j = 0;
