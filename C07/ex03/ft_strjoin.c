@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ryan <ryan@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: wlim <wlim@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 22:01:06 by wlim              #+#    #+#             */
-/*   Updated: 2025/05/01 00:42:22 by ryan             ###   ########.fr       */
+/*   Updated: 2025/05/01 18:08:00 by wlim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,7 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	if (size == 0)
 	{
 		res = malloc(1);
+		res[0] = '\0';
 		return (res);
 	}
 	res = malloc(get_total_len(size, strs, sep) + 1);
